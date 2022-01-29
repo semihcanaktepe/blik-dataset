@@ -4,10 +4,12 @@
 
 # 1. Load the required packages
 install.packages("mgcv")
+install.packages("multcomp")
 install.packages("itsadug")
 
 # 2. Import the required packages
 library(mgcv)
+library(multcomp)
 library(itsadug)
 
 # 3. Import the datasets from your directory
