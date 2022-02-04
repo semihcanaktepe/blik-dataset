@@ -25,7 +25,7 @@ gb <- bam(GirlsBeachLooks ~ Quantifier +
              s(Time, by=Counterbalance) +
              s(Time, by=Sex) +
              ti(Time, Index, by=Quantifier),
-           data=eye, family=quasibinomial, method="fREML"))
+           data=eye, family=quasibinomial, method="fREML")
 
 ## 4.2. Boys on the Beach Referent
 
@@ -34,7 +34,7 @@ bb <- bam(BoysBeachLooks ~ Quantifier +
              s(Time, by=Counterbalance) +
              s(Time, by=Sex) +
              ti(Time, Index, by=Quantifier),
-           data=eye, family=quasibinomial, method="fREML"))
+           data=eye, family=quasibinomial, method="fREML")
 
 ## 4.3. Girls on the Grass Referent
 
@@ -43,7 +43,7 @@ gg <- bam(GirlsGrassLooks ~ Quantifier +
              s(Time, by=Counterbalance) +
              s(Time, by=Sex) +
              ti(Time, Index, by=Quantifier),
-           data=eye, family=quasibinomial, method="fREML"))
+           data=eye, family=quasibinomial, method="fREML")
 
 # 5. GAM for the response and reaction time data
 
@@ -54,6 +54,7 @@ macc <- bam(accuracy ~ quantifier + s(t_index, by=quantifier) +
           data=response, family=binomial, method="fREML")
 
 ### 5.1.1. Pairwise comparison between quantifiers
+## This is not used for the graduation project.
 
 contr <- matrix(0, nrow = 6, ncol = length(coef(res)))
 colnames(contr) <- names(coef(res))
@@ -99,6 +100,7 @@ mrt <- bam(rt ~ quantifier + s(t_index, by=quantifier) +
             data=response, family=gaussian, method="fREML")
 
 ### 5.2.1. Pairwise comparison between quantifiers
+## This is not used for the graduation project.
 g2 <- glht(mrt, linfct = contr)
 summary(g2)
 
